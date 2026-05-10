@@ -1,0 +1,122 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(249, 246, 240, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(79, 93, 68, 0.2);
+}
+
+.container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; } }
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoImageContainer {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 2px solid var(--brand-green);
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.logoImage {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.5);
+}
+
+.logoText {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  letter-spacing: -0.025em;
+  transition: color 0.3s ease;
+}
+.logoLink:hover .logoText {
+  color: var(--brand-wood);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: var(--brand-green);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--brand-wood);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--brand-wood);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.navLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.cartLink {
+  position: relative;
+  color: var(--brand-green);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+.cartLink:hover {
+  color: var(--brand-wood);
+}
+
+.cartBadge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: var(--brand-wood);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+}

@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          String    @id @default(uuid())
+  name        String
+  description String
+  price       Float
+  imageUrl    String?
+  status      String    @default("AVAILABLE") // AVAILABLE, RESERVED, COLLECTED
+  reservedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  orders      Order[]
+}
+
+model Order {
+  id              String   @id @default(uuid())
+  productId       String
+  amount          Float
+  status          String   @default("PENDING") // PENDING, PAID, FULFILLED
+  shippingDetails String?  // Store JSON string or basic info
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  product         Product  @relation(fields: [productId], references: [id])
+}
+
+model SiteSettings {
+  id                      String  @id @default("default")
+  monthlyOrderLimitActive Boolean @default(true)
+  currentMonthlyOrders    Int     @default(0)
+}

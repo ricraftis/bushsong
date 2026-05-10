@@ -1,0 +1,47 @@
+.button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  outline: none;
+}
+
+.buttonDisabled {
+  background-color: #E5E7EB; /* gray-200 */
+  color: #6B7280; /* gray-500 */
+  cursor: not-allowed;
+}
+
+.buttonInCart {
+  background-color: var(--brand-wood);
+  color: white;
+}
+
+.buttonAvailable {
+  background-color: var(--brand-green);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.buttonAvailable:hover {
+  background-color: var(--brand-charcoal-green);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

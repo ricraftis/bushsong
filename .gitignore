@@ -26,7 +26,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
+
+# database
+prisma/*.db
+prisma/*.db-journal
 
 # vercel
 .vercel
@@ -34,3 +39,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# === Boost OS (managed by boostmyagent CLI) ===
+/AGENTS.md
+/.agents/skills/.boostmyagent-install.json
+/.agents/memory/
+/.agents/references/
+/.agents/skills/audit/
+/.agents/skills/cost/
+/.agents/skills/explain/
+/.agents/skills/forget/
+/.agents/skills/health/
+/.agents/skills/new/
+/.agents/skills/next/
+/.agents/skills/os/
+/.agents/skills/preflight/
+/.agents/skills/recall/
+/.agents/skills/remember/
+/.agents/skills/spawn/
+/.agents/skills/uninstall/
+/.agents/skills/update/
+/.agents/skills/vibe/
+# === End Boost OS ===
